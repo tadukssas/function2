@@ -164,6 +164,23 @@ countDivisible(18);
 // 7)
 
 // Sugeneruokite atsitiktinio (nuo 10 iki 20) ilgio masyvą, kurio visi, išskyrus paskutinį, elementai yra atsitiktiniai skaičiai nuo 0 iki 10, o paskutinis masyvas, kuris generuojamas pagal tokią pat salygą kaip ir pirmasis masyvas. Viską pakartokite atsitiktinį nuo 10 iki 30  kiekį kartų. Paskutinio masyvo paskutinis elementas yra lygus 0;
+function arrayRandom() {
+
+    return Array.from({ length: 19 }, () => Math.floor(Math.random() * 100));
+}
+
+
+nArr = arrayRandom();
+nArr.push(0);
+
+for (let i = 0; i < Math.floor(Math.random() * 4); i++) {
+    let nnArr = arrayRandom();
+    nnArr.push(nArr);
+    nArr = nnArr;
+}
+
+console.log(nArr);
+
 // function randomArray() {
 //     let arr = [];
 //     let random = "";
@@ -172,7 +189,7 @@ countDivisible(18);
 //     }
 //     for (let i = 0; i < arr.length; i++) {
 //         if (i == arr.length - 1) {
-//             arr[i] = 0;
+//             arr[i] = arrayRandom();
 //         } else {
 //             arr[i] = Math.floor(Math.random() * (20 - 10)) + 10;
 //         }
@@ -180,5 +197,16 @@ countDivisible(18);
 //     console.log(arr);
 // }
 // randomArray();
-let randomArray = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-console.log(randomArray) 
+
+// create a random array with last number beeing another random array
+// function randomArray() {
+
+
+
+// 8)
+
+// sugeneruoti masyvą, kuris kurtų atsitiktinį skaičių masyvų kaip savo paskutinį skaičių, paskutiniame jo masyve yra 0.
+// function randomArray() {
+// randomArray();
+
+
